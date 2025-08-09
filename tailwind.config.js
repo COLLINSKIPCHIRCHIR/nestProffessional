@@ -1,0 +1,47 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  safelist: [
+    'bg-primary',
+    'bg-primary-foreground',
+    'bg-secondary',
+    'bg-secondary-foreground',
+    'bg-accent',
+    'bg-accent-foreground',
+    'bg-gold',
+    'bg-gold-foreground',
+    'text-primary',
+    'text-primary-foreground',
+    'text-secondary',
+    'text-secondary-foreground',
+    'text-accent',
+    'text-accent-foreground',
+    'text-gold',
+    'text-gold-foreground',
+    'hover:bg-accent',
+    'hover:text-gold',
+    'hover:bg-primary',
+    'hover:text-primary-foreground',
+  ],
+    theme: {
+    extend: {
+      colors: {
+        border: "hsl(var(--border) / <alpha-value>)",
+        primary: "hsl(var(--primary) / <alpha-value>)",
+        "primary-foreground": "hsl(var(--primary-foreground) / <alpha-value>)",
+        secondary: "hsl(var(--secondary) / <alpha-value>)",
+        "secondary-foreground": "hsl(var(--secondary-foreground) / <alpha-value>)",
+        accent: "hsl(var(--accent) / <alpha-value>)",
+        "accent-foreground": "hsl(var(--accent-foreground) / <alpha-value>)",
+        gold: "hsl(var(--gold) / <alpha-value>)",
+        "gold-foreground": "hsl(var(--gold-foreground) / <alpha-value>)",
+        background: "hsl(var(--background) / <alpha-value>)",
+        foreground: "hsl(var(--foreground) / <alpha-value>)",
+      },
+    },
+  },
+  plugins: [],
+};

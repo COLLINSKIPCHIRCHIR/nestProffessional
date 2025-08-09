@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Accountants Nest Professionals Design System 
+Brand Colors: Dark Green #0A3D2E, Purple #7A2C8B, Gold #D4A838, White #FFFFFF
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base Colors */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --primary: 159 62% 12%;        /* Dark Green #0A3D2E */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 159 45% 25%;   /* Lighter green for effects */
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 159 62% 12%;
+
+    --accent: 289 50% 35%;         /* Purple #7A2C8B */
+    --accent-foreground: 0 0% 100%;
+
+    --gold: 45 70% 52%;            /* Gold #D4A838 */
+    --gold-foreground: 159 62% 12%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 159 25% 45%;
+
+    --border: 159 15% 88%;
+    --input: 159 15% 94%;
+    --ring: 159 62% 12%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --gold: 45 70% 52%;
+    --gold-foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground scroll-smooth;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-hero {
+    @apply relative inline-flex items-center justify-center px-8 py-3 font-semibold text-white bg-gradient-to-r from-primary to-accent rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+
+  .btn-gold {
+    @apply bg-gradient-to-r from-gold to-accent text-gold-foreground hover:shadow-xl hover:scale-105 transition-all duration-300;
+  }
+
+  /* Cards */
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+}

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Mail } from 'lucide-react';
+import logo from '../assets/images/ANPlogo.png'
+
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +47,7 @@ const Navigation = () => {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center">
-                <img src="/src/assets/images/ANPlogo.png" alt="Your Logo" className="w-[70px] h-[50px] sm:w-[60px] md:w-[70px] lg:w-[80px]"  />
+                <img src={logo} alt="Your Logo" className="w-[70px] h-[50px] sm:w-[60px] md:w-[70px] lg:w-[80px]"  />
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-lg gradient-text">Nest</span>

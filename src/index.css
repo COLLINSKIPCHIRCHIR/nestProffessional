@@ -13,9 +13,9 @@ All colors MUST be HSL.
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
-    --primary: 159 62% 12%;        /* Dark Green #0A3D2E */
+    --primary: 145 60% 41%;        /* Dark Green #0A3D2E */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 159 45% 25%;   /* Lighter green for effects */
+    --primary-glow: 145 50% 50%;   /* Lighter green for effects */
 
     --secondary: 0 0% 96%;
     --secondary-foreground: 159 62% 12%;

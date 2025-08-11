@@ -1,4 +1,4 @@
-import { FileText, Briefcase, BarChart2, DollarSign, CheckCircle, ClipboardList, Settings,FilePlus } from "lucide-react"; // import icons you’ll use
+import { FileText, Briefcase, BarChart2, DollarSign, CheckCircle, ClipboardList, Settings,FilePlus, Building } from "lucide-react"; // import icons you’ll use
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
@@ -32,21 +32,19 @@ const Services = () => {
       },
       {
         icon: DollarSign,
-        title: "KRA Returns - VAT, PAYE, Income Tax, Withholding Tax, TOT",
+        title: "KRA Returns & Tax Filing",
         description:
-          "Expert assistance with filing all types of KRA tax returns to ensure full compliance and avoid penalties.",
+          "Expert assistance with filing all types of KRA tax returns to ensure compliance and avoid penalties.",
         features: [
           "VAT Filing",
           "PAYE Processing",
           "Income Tax Returns",
           "Withholding Tax Submissions",
           "Turnover Tax (TOT)",
-          "Book Keeping",
-          "Pay Roll Management",
-          "Dispute Resolutions & Appeals",
-          "Monthly Rental Income Filing"
+          "Dispute Resolutions & Appeals"
         ],
       },
+
       {
         icon: Briefcase,
         title: "Tax Consultancy",
@@ -71,7 +69,6 @@ const Services = () => {
           "Application Submission",
           "Follow-ups with EPRA",
           "Licence Renewal Assistance",
-          "Passport APPlication"
         ],
       },
       {
@@ -86,7 +83,9 @@ const Services = () => {
           "NSSF/NHIF Setup",
           "Post-Incorporation Compliance",
           "SHA Filling & Registration",
-          "Registration of societies & Associations,CBO"
+          "Registration of societies & Associations,CBO",
+          "Business Registration",
+          "CR-12 updates"
         ],
       },
       {
@@ -113,9 +112,42 @@ const Services = () => {
           "Application Filing",
           "Follow-ups with NCA",
           "Licence Renewals",
-          "NTSA Services"
+          "NTSA Services",
+          "Passport APPlication"
         ],
       },
+      {
+        icon: Building, 
+        title: "Agency & Property Management",
+        description:
+          "Professional management and agency services to help you maximize property value and maintain tenant satisfaction.",
+        features: [
+          "Tenant Sourcing & Screening",
+          "Lease Preparation & Management",
+          "Rent Collection & Accounting",
+          "Property Maintenance Coordination",
+          "Market Analysis & Rent Reviews",
+          "Legal & Compliance Support",
+          "Monthly rental income filing"
+        ],
+      },
+
+      {
+        icon: FileText, // consider changing to a more fitting icon like BookOpen, Ledger, or Notebook if available
+        title: "Bookkeeping Services",
+        description:
+          "Accurate and organized financial record-keeping to keep your business running smoothly and compliant.",
+        features: [
+          "Recording Income & Expenses",
+          "Bank Reconciliation",
+          "Accounts Payable & Receivable Tracking",
+          "Monthly Financial Statements",
+          "Cash Flow Monitoring",
+          "Tax-Ready Reports & Compliance"
+        ],
+      },
+
+
 ];
   return (
     <div className="min-h-screen pt-20">
@@ -176,6 +208,40 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Partners / Logos Section */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-primary mb-4">Our Partners</h2>
+            <p className="text-muted-foreground">
+              Trusted by leading organizations and platforms
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6 items-center">
+            {[
+              "/src/assets/images/itax.png",
+              "/src/assets/images/ecitizen.png",
+              "/src/assets/images/quickbooks.png",
+              "/src/assets/images/kra.png",
+              "/src/assets/images/ntsa.png",
+              "/src/assets/images/nssf.png",
+              "/src/assets/images/BRS.png",
+              "/src/assets/images/AGPO.png",
+            ].map((logo, index) => (
+              <div key={index} className="flex justify-center">
+                <img
+                  src={logo}
+                  alt={`Partner Logo ${index + 1}`}
+                  className="h-16 object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       {/* Process Section */}
        <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4">
@@ -210,58 +276,68 @@ const Services = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold gradient-text mb-4">Transparent Pricing</h2>
             <p className="text-xl text-muted-foreground">
-              No hidden fees, no surprises - just honest, competitive pricing
+              No hidden fees, no surprises – just honest, competitive pricing
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {[
               {
-                plan: 'Starter',
-                price: '$150',
-                period: '/month',
-                description: 'Perfect for small businesses and startups',
-                features: ['Monthly Bookkeeping', 'Financial Reports', 'Basic Tax Preparation', 'Email Support']
+                plan: 'Company Registration',
+                price: 'KSh 18,000',
+                description: 'Get your business legally registered quickly and efficiently.',
+                features: ['Name Search & Reservation', 'Certificate of Incorporation', 'KRA PIN Registration']
               },
               {
-                plan: 'Professional',
-                price: '$350',
-                period: '/month',
-                description: 'Ideal for growing businesses',
-                features: ['Everything in Starter', 'Payroll Services', 'Quarterly Reviews', 'Phone Support', 'QuickBooks Setup']
+                plan: 'Audit',
+                price: 'KSh 10,000 - 50,000',
+                description: 'Comprehensive audits tailored to your business size and needs.',
+                features: ['Financial Statement Audit', 'Compliance Checks', 'Management Reports']
               },
               {
-                plan: 'Enterprise',
-                price: 'Custom',
-                period: '',
-                description: 'Comprehensive solutions for large businesses',
-                features: ['Everything in Professional', 'Audit Services', 'Strategic Consulting', 'Dedicated Account Manager', 'Priority Support']
+                plan: 'Monthly Returns',
+                price: 'KSh 5,000',
+                description: 'Accurate and timely monthly returns filing.',
+                features: ['PAYE Filing', 'NHIF/NSSF Submissions', 'Compliance Advisory']
+              },
+              {
+                plan: 'VAT Returns',
+                price: 'KSh 4,000',
+                description: 'Seamless VAT returns preparation and submission.',
+                features: ['VAT Filing', 'Tax Record Management', 'Deadline Reminders']
               }
             ].map((plan, index) => (
-              <Card key={index} className={`card-hover ${index === 1 ? 'border-accent shadow-lg scale-105' : ''}`}>
-                <CardContent className="p-8 text-center">
+              <Card
+                key={index}
+                className={`card-hover text-center ${index === 1 ? 'border-accent shadow-lg scale-105' : ''}`}
+              >
+                <CardContent className="p-8 flex flex-col items-center">
                   <h3 className="text-2xl font-semibold mb-2">{plan.plan}</h3>
                   <div className="mb-4">
-                    <span className="text-4xl font-bold gradient-text">{plan.price}</span>
-                    <span className="text-muted-foreground">{plan.period}</span>
+                    <span className="text-3xl font-bold gradient-text">{plan.price}</span>
                   </div>
                   <p className="text-muted-foreground mb-6">{plan.description}</p>
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center justify-center space-x-2">
+                      <li
+                        key={featureIndex}
+                        className="flex items-center justify-center space-x-2"
+                      >
                         <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full"></div>
                         <span className="text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  <Button className={index === 1 ? 'btn-hero w-full' : 'w-full'}>
-                    Get Started
-                  </Button>
+                  <a href="https://wa.me/254714992094" target="_blank"><Button className={index === 1 ? 'btn-hero w-full' : 'w-full'}>
+                    Chat on Whatsapp
+                  </Button></a>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* CTA section */}
       <section className="py-20 bg-gradient-to-r from-primary to-accent">

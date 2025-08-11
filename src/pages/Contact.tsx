@@ -281,25 +281,26 @@ const Contact = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold gradient-text mb-4">Find Us</h2>
             <p className="text-xl text-muted-foreground">
-              Located in the heart of the business district
+              Located in the heart of Nakuru City
             </p>
           </div>
           <div className="max-w-4xl mx-auto">
             <Card className="overflow-hidden">
-              <div className="bg-gradient-to-br from-primary/20 to-accent/20 h-96 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-16 h-16 text-primary mx-auto mb-4" />
-                  <h3 className="text-2xl font-semibold text-primary mb-2">Interactive Map</h3>
-                  <p className="text-muted-foreground">
-                    Map integration would be implemented here<br />
-                    with your preferred mapping service
-                  </p>
-                </div>
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7686395738388!2d36.06893097396866!3d-0.2859273353488199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18298d7b41d7960d%3A0x92f4236983231342!2sKoko%20Savannah%20Business%20Centre!5e0!3m2!1sen!2ske!4v1754894872834!5m2!1sen!2ske" 
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Google Map Location"
+              ></iframe>
             </Card>
           </div>
         </div>
       </section>
+
 
       {/* FAQ Section */}
       <section className="py-20">

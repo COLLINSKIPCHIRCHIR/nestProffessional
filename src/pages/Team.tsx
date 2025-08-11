@@ -4,52 +4,12 @@ import { Card, CardContent } from '@/components/ui/card';
 const Team = () => {
   const teamMembers = [
     {
-      name: 'Jennifer Martinez',
-      title: 'Managing Partner & CPA',
-      experience: '25+ years',
-      specialties: ['Tax Planning', 'Business Consulting', 'Audit Services'],
-      bio: 'Jennifer founded Accountants Nest with a vision to provide exceptional accounting services. She specializes in complex tax strategies and has helped numerous businesses optimize their financial operations.',
-      email: 'jennifer@accountantsnest.com'
-    },
-    {
-      name: 'Michael Thompson',
-      title: 'Senior Tax Manager & CPA',
-      experience: '18+ years',
-      specialties: ['Individual Taxes', 'Corporate Taxes', 'IRS Representation'],
-      bio: 'Michael brings extensive experience in tax preparation and planning. He has successfully represented clients before the IRS and specializes in resolving complex tax issues.',
-      email: 'michael@accountantsnest.com'
-    },
-    {
-      name: 'Sarah Chen',
-      title: 'Bookkeeping Manager',
-      experience: '12+ years',
-      specialties: ['QuickBooks', 'Financial Reporting', 'Payroll'],
-      bio: 'Sarah leads our bookkeeping team with expertise in various accounting software platforms. She ensures accuracy and timeliness in all financial record keeping.',
-      email: 'sarah@accountantsnest.com'
-    },
-    {
-      name: 'David Rodriguez',
-      title: 'Business Consultant & CPA',
-      experience: '15+ years',
-      specialties: ['Strategic Planning', 'Financial Analysis', 'Business Valuation'],
-      bio: 'David helps businesses make informed financial decisions through comprehensive analysis and strategic planning. He has guided numerous companies through growth and expansion.',
-      email: 'david@accountantsnest.com'
-    },
-    {
-      name: 'Emily Johnson',
-      title: 'Audit Manager & CPA',
-      experience: '14+ years',
-      specialties: ['Financial Audits', 'Internal Controls', 'Compliance'],
-      bio: 'Emily leads our audit practice with a focus on providing valuable insights through comprehensive financial reviews and internal control assessments.',
-      email: 'emily@accountantsnest.com'
-    },
-    {
-      name: 'Robert Kim',
-      title: 'Tax Associate & EA',
-      experience: '8+ years',
-      specialties: ['Tax Preparation', 'Tax Research', 'Client Relations'],
-      bio: 'Robert provides exceptional tax preparation services and maintains strong client relationships. He stays current with all tax law changes to ensure compliance.',
-      email: 'robert@accountantsnest.com'
+      name: 'Daniel Gisore Nyachieo',
+      title: 'CEO',
+      experience: '7+ years',
+      specialties: ['Accounting', 'Audit', 'Tax Consultancy'],
+      bio: 'A motivated accountant and a graduate from Technical University of Kenya with a Bsc in Accounting.Has great mastery of enterprise development through accounting best practices.',
+      email: 'danielnyachieo@gmail.com'
     }
   ];
   return (
@@ -84,10 +44,12 @@ const Team = () => {
               <Card key={index} className="card-hover group">
                 <CardContent className="p-8">
                   <div className="flex items-start space-x-6">
-                    <div className="w-24 h-24 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl font-bold text-primary">
-                        {member.name.split(' ').map(n => n[0]).join('')}
-                      </span>
+                    <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+                      <img 
+                        src=""  // <-- Your image path here
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-2xl font-semibold mb-1 group-hover:text-accent transition-colors">
@@ -147,12 +109,9 @@ const Team = () => {
               Our team maintains the highest professional standards
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="flex justify-center">
             {[
               { cert: 'CPA', description: 'Certified Public Accountants' },
-              { cert: 'EA', description: 'Enrolled Agents' },
-              { cert: 'CMA', description: 'Certified Management Accountants' },
-              { cert: 'CFE', description: 'Certified Fraud Examiners' }
             ].map((credential, index) => (
               <div key={index} className="text-center">
                 <div className="w-20 h-20 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4">

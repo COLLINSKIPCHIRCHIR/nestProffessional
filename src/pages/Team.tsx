@@ -18,7 +18,7 @@ const Team = () => {
       <section
         className="py-20 bg-cover bg-center relative"
         style={{
-          backgroundImage: "url('/src/assets/images/teamimage.jpg')", // <-- Replace this with your image path
+          backgroundImage: "url('/images/teamimage.jpg')", // <-- Replace this with your image path
         }}
       >
         {/* Optional overlay for better text visibility */}

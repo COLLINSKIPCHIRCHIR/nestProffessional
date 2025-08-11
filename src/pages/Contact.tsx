@@ -61,7 +61,7 @@ const Contact = () => {
           <section
                   className="py-20 bg-cover bg-center relative"
                   style={{
-                    backgroundImage: "url('/src/assets/images/contact image.jpg')", // <-- Replace this with your image path
+                    backgroundImage: "url('/images/contact image.jpg')", // <-- Replace this with your image path
                   }}
                 >
                   {/* Optional overlay for better text contrast */}

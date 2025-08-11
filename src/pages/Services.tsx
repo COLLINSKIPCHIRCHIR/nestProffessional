@@ -155,7 +155,7 @@ const Services = () => {
       <section
         className="py-20 bg-cover bg-center relative"
         style={{
-          backgroundImage: "url('/src/assets/images/servicesimage.jpg')", // <-- Replace this with your image path
+          backgroundImage: "url('/images/servicesimage.jpg')", // <-- Replace this with your image path
         }}
       >
         {/* Optional overlay for better text contrast */}
@@ -220,14 +220,14 @@ const Services = () => {
 
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6 items-center">
             {[
-              "/src/assets/images/itax.png",
-              "/src/assets/images/ecitizen.png",
-              "/src/assets/images/quickbooks.png",
-              "/src/assets/images/kra.png",
-              "/src/assets/images/ntsa.png",
-              "/src/assets/images/nssf.png",
-              "/src/assets/images/BRS.png",
-              "/src/assets/images/AGPO.png",
+              "/images/itax.png",
+              "/images/ecitizen.png",
+              "/images/quickbooks.png",
+              "/images/kra.png",
+              "/images/ntsa.png",
+              "/images/nssf.png",
+              "/images/BRS.png",
+              "/images/AGPO.png",
             ].map((logo, index) => (
               <div key={index} className="flex justify-center">
                 <img

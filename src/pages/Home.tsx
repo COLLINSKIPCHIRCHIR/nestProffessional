@@ -87,7 +87,7 @@ const Home = () => {
         <section
           className="relative overflow-hidden bg-cover bg-center"
           style={{
-            backgroundImage: "url('/src/assets/images/accountingimg3.jpg')", // <-- Replace with your image path
+            backgroundImage: "url('/images/accountingimg3.jpg')", // <-- Replace with your image path
           }}
         >
           {/* Dark overlay */}

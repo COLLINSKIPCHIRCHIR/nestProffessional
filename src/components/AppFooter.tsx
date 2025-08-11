@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="flex items-center space-x-2">
               {/*logo */}
               <div className="flex-shrink-0">
-                <img src="/src/assets/images/ANPlogo.png" alt="Nest Proffessionals Logo" className="w-[50px] h-[50px] sm:w-[60px] md:w-[70px] lg:w-[80px]" />
+                <img src="/images/ANPlogo.png" alt="Nest Proffessionals Logo" className="w-[50px] h-[50px] sm:w-[60px] md:w-[70px] lg:w-[80px]" />
               </div>
               {/*text hidden on mobile*/}
 

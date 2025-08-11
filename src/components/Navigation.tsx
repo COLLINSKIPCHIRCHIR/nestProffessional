@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Mail } from 'lucide-react';
-import logo from '../assets/images/ANPlogo.png'
+import logo from '../../public/images/ANPlogo.png'
 
 
 const Navigation = () => {

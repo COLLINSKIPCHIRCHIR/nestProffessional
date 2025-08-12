@@ -46,7 +46,7 @@ const Team = () => {
                   <div className="flex items-start space-x-6">
                     <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
                       <img 
-                        src=""  // <-- Your image path here
+                        src="/images/CEO_dp.jpeg"  // <-- Your image path here
                         alt={member.name}
                         className="w-full h-full object-cover"
                       />

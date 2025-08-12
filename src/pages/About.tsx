@@ -56,7 +56,7 @@ const About = () => {
               <h2 className="text-4xl font-bold gradient-text mb-6">Our Story</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                 The firm was established in he year 2019 with the aim of offering accounting and audit solutions
+                 The firm was established in the year 2019 with the aim of offering accounting and audit solutions
                  to the general public.Over time the firm has grown its client base to offering solutions to various clients
                  cutting across all sectors eg Petroleum & Energy sector,Retail Sector,Schools etc,hardwares, petrol stations,
                  the government etc.

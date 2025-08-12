@@ -1,4 +1,4 @@
-import { FileText, Briefcase, BarChart2, DollarSign, CheckCircle, ClipboardList, Settings,FilePlus, Building } from "lucide-react"; // import icons you’ll use
+import { FileText, Briefcase, BarChart2, DollarSign, CheckCircle, ClipboardList, Settings,FilePlus, Building ,Wallet ,Globe} from "lucide-react"; // import icons you’ll use
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
@@ -80,9 +80,7 @@ const Services = () => {
           "Business Name Search & Reservation",
           "Certificate of Incorporation",
           "KRA PIN Registration",
-          "NSSF/NHIF Setup",
           "Post-Incorporation Compliance",
-          "SHA Filling & Registration",
           "Registration of societies & Associations,CBO",
           "Business Registration",
           "CR-12 updates"
@@ -146,6 +144,28 @@ const Services = () => {
           "Tax-Ready Reports & Compliance"
         ],
       },
+      {
+        icon: Wallet, 
+        title: "Payroll Management",
+        description:
+          "Streamline employee payments, tax deductions, and record-keeping with our secure and efficient payroll management solutions.",
+        features: [
+          "PAYE Filing",
+          "SHA Filing",
+          "NSSF Filing"
+        ],
+      },
+      {
+        icon: Globe, 
+        title: "Passport Application",
+        description:
+          "Hassle-free assistance in preparing, submitting, and tracking your passport applications for smooth international travel.",
+        features: [
+          "Visa processing /Application",
+          "Flight Bookings"
+        ],
+      },
+     
 
 
 ];

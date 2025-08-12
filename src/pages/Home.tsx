@@ -5,26 +5,34 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Home = () => {
-  const [isVisible, setIsVisible] = useState(false);
+
+ const images = [
+  "/images/accountingimg3.jpg",
+  "/images/thumbnail1.jpg",
+  "/images/thumbnail2.jpg",
+  "/images/thumbnail3.jpeg",
+  "/images/thumbnail4.jpeg",
+  "/images/thumbnail5.jpeg",
+  "/images/thumbnail6.jpeg",
+  "/images/thumbnail7.jpeg",
+  "/images/thumbnail8.jpeg",
+ ];
+
+ const [isVisible, setIsVisible] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+
 
   useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 3000); // change every 5 seconds
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  // Trigger animation
+  useEffect(() => {
     setIsVisible(true);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll('.fade-in-up');
-    elements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
   }, []);
 
  const services = [
@@ -54,25 +62,26 @@ const Home = () => {
   },
 ];
   const testimonials = [
-    {
-      name: 'Sarah Johnson',
-      company: 'Tech Innovations Inc.',
-      rating: 5,
-      text: 'Accountants Nest has been instrumental in our company\'s financial success. Their expertise and attention to detail is unmatched.'
-    },
-    {
-      name: 'Michael Chen',
-      company: 'Local Restaurant Group',
-      rating: 5,
-      text: 'Professional, reliable, and always available when we need them. They\'ve saved us thousands in tax optimization.'
-    },
-    {
-      name: 'Emily Rodriguez',
-      company: 'Creative Design Studio',
-      rating: 5,
-      text: 'As a small business owner, I appreciate their personalized approach and clear communication about our finances.'
-    }
-  ];
+  {
+    name: 'Grace Wanjiru',
+    company: 'SafariLink Tours & Travel',
+    rating: 5,
+    text: 'Accountants Nest has kept our books in perfect order, allowing us to focus on growing our tour packages. Their professionalism is top-notch.'
+  },
+  {
+    name: 'Peter Otieno',
+    company: 'Kisumu Fresh Produce Ltd.',
+    rating: 5,
+    text: 'They helped us streamline our accounts and save money on taxes. I can now run my business with full confidence in our finances.'
+  },
+  {
+    name: 'Faith Mwikali',
+    company: 'Urban Bites Café Nairobi',
+    rating: 5,
+    text: 'Their friendly team makes accounting simple to understand, and they are always available whenever we need advice.'
+  }
+];
+
 
   const stats = [
     { number: '500+', label: 'Happy Clients' },
@@ -84,78 +93,79 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-        <section
-          className="relative overflow-hidden bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/images/accountingimg3.jpg')", // <-- Replace with your image path
-          }}
-        >
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/20"></div>
+         <section
+      className="relative overflow-hidden bg-cover bg-center transition-all duration-1000"
+      style={{
+        backgroundImage: `url('${images[currentIndex]}')`,
+      }}
+    >
+      <div className="absolute inset-0 bg-black/20"></div>
 
-          <div className="relative container mx-auto px-4 py-20 lg:py-32">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div
-                className={`text-white space-y-8 transition-all duration-1000 transform ${
-                  isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
-                }`}
+      <div className="relative container mx-auto px-4 py-20 lg:py-32">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left text */}
+          <div
+            className={`text-white space-y-8 transition-all duration-1000 transform ${
+              isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"
+            }`}
+          >
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
+              Your Financial Success
+              <span className="block text-gold">Starts Here</span>
+            </h1>
+            <p className="text-xl text-primary/90 leading-relaxed font-bold">
+              Professional accounting services tailored to your business needs. From tax preparation to strategic financial planning, we're your trusted partner for growth.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button asChild size="lg" className="btn-gold">
+                <a href="https://wa.me/254714992094" target="_blank">
+                  <span>Get Free Consultation</span>
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </a>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-primary"
               >
-                <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                  Your Financial Success
-                  <span className="block text-gold">Starts Here</span>
-                </h1>
-                <p className="text-xl text-primary/90 leading-relaxed font-bold">
-                  Professional accounting services tailored to your business needs. From tax preparation to strategic financial planning, we're your trusted partner for growth.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button asChild size="lg" className="btn-gold">
-                    <Link to="/contact">
-                      <span>Get Free Consultation</span>
-                      <ArrowRight className="ml-2 w-5 h-5" />
-                    </Link>
-                  </Button>
-                  <Button
-                    asChild
-                    size="lg"
-                    variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-primary"
-                  >
-                    <a href="tel:555-123-4567">
-                      <Phone className="mr-2 w-5 h-5" />
-                      <span>Call Now</span>
-                    </a>
-                  </Button>
-                </div>
-              </div>
+                <a href="tel:555-123-4567">
+                  <Phone className="mr-2 w-5 h-5" />
+                  <span>Call Now</span>
+                </a>
+              </Button>
+            </div>
+          </div>
 
-              <div
-                className={`transition-all duration-1000 transform ${
-                  isVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'
-                }`}
-              >
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                  <h3 className="text-white text-2xl font-semibold mb-6">
-                    Why Choose Us?
-                  </h3>
-                  <div className="space-y-4">
-                    {[
-                      'Certified Public Accountants',
-                      '10+ Years of Experience',
-                      'Personalized Service',
-                      'Competitive Pricing',
-                      '24/7 Client Support',
-                    ].map((feature, index) => (
-                      <div key={index} className="flex items-center space-x-3">
-                        <CheckCircle className="w-5 h-5 text-gold flex-shrink-0" />
-                        <span className="text-white">{feature}</span>
-                      </div>
-                    ))}
+          {/* Right features */}
+          <div
+            className={`transition-all duration-1000 transform ${
+              isVisible ? "translate-x-0 opacity-100" : "translate-x-12 opacity-0"
+            }`}
+          >
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+              <h3 className="text-white text-2xl font-semibold mb-6">
+                Why Choose Us?
+              </h3>
+              <div className="space-y-4">
+                {[
+                  "Certified Public Accountants",
+                  "10+ Years of Experience",
+                  "Personalized Service",
+                  "Competitive Pricing",
+                  "24/7 Client Support",
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-gold flex-shrink-0" />
+                    <span className="text-white">{feature}</span>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
 
       {/* Stats Section */}

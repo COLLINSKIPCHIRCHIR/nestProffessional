@@ -85,7 +85,7 @@ const Home = () => {
 
   const stats = [
     { number: '500+', label: 'Happy Clients' },
-    { number: '10+', label: 'Years Experience' },
+    { number: '6+', label: 'Years Experience' },
     { number: 'Ksh50M+', label: 'Tax Savings' },
     { number: '99%', label: 'Client Satisfaction' }
   ];
@@ -150,7 +150,7 @@ const Home = () => {
               <div className="space-y-4">
                 {[
                   "Certified Public Accountants",
-                  "10+ Years of Experience",
+                  "6+ Years of Experience",
                   "Personalized Service",
                   "Competitive Pricing",
                   "24/7 Client Support",
